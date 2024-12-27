@@ -1,0 +1,31 @@
+CREATE TABLE PropertyDetails (
+    SerialNumber INT,
+    ListYear INT,
+    DateRecorded DATE,
+    Town VARCHAR(100),
+    Address VARCHAR(255),
+    Location VARCHAR(255)
+);
+
+CREATE TABLE PropertyValues (
+    SerialNumber INT,
+    AssessedValue DECIMAL(18, 2),
+    SaleAmount DECIMAL(18, 2),
+    SalesRatio FLOAT
+);
+
+CREATE TABLE PropertyCategories (
+    SerialNumber INT,
+    PropertyType VARCHAR(100),
+    ResidentialType VARCHAR(100)
+);
+
+CREATE TABLE PropertyRemarks (
+    SerialNumber INT,
+    NonUseCode NVARCHAR(100),
+    AssessorRemarks NVARCHAR(255),
+    OPMRemarks NVARCHAR(255)
+);
+
+
+

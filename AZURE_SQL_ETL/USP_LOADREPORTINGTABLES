@@ -1,0 +1,25 @@
+Alter procedure usp_RealEstateDataUpdates as 
+
+TRUNCATE TABLE PropertyDetails 
+
+TRUNCATE TABLE PropertyValues 
+
+TRUNCATE TABLE PropertyCategories 
+
+TRUNCATE TABLE PropertyRemarks 
+
+INSERT INTO PropertyDetails (SerialNumber, ListYear, DateRecorded, Town, Address, Location)
+SELECT SerialNumber, ListYear, DateRecorded, Town, Address, Location
+FROM NewStagingTable;
+
+INSERT INTO PropertyCategories (SerialNumber, PropertyType, ResidentialType)
+SELECT SerialNumber, PropertyType, ResidentialType
+FROM NewStagingTable;
+
+INSERT INTO PropertyRemarks (SerialNumber, NonUseCode, AssessorRemarks, OPMRemarks)
+SELECT SerialNumber, NonUseCode, AssessorRemarks, OPMRemarks
+FROM NewStagingTable;
+
+INSERT INTO PropertyValues (SerialNumber, AssessedValue, SaleAmount, SalesRatio)
+SELECT SerialNumber, AssessedValue, SaleAmount, SalesRatio
+FROM NewStagingTable;

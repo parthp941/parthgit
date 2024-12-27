@@ -1,0 +1,34 @@
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[NewStagingTable](
+	[Serial Number] [bigint] NULL,
+	[List Year] [bigint] NULL,
+	[Date Recorded] [varchar](max) NULL,
+	[Town] [varchar](max) NULL,
+	[Address] [varchar](max) NULL,
+	[Assessed Value] [float] NULL,
+	[Sale Amount] [float] NULL,
+	[Sales Ratio] [float] NULL,
+	[Property Type] [varchar](max) NULL,
+	[Residential Type] [varchar](max) NULL,
+	[Non Use Code] [varchar](max) NULL,
+	[Assessor Remarks] [varchar](max) NULL,
+	[OPM remarks] [varchar](max) NULL,
+	[Location] [varchar](max) NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+EXEC sp_rename '[dbo].[NewStagingTable].[Serial Number]', 'SerialNumber', 'COLUMN';
+EXEC sp_rename '[dbo].[NewStagingTable].[List Year]', 'ListYear', 'COLUMN';
+EXEC sp_rename '[dbo].[NewStagingTable].[Date Recorded]', 'DateRecorded', 'COLUMN';
+EXEC sp_rename '[dbo].[NewStagingTable].[Assessed Value]', 'AssessedValue', 'COLUMN';
+EXEC sp_rename '[dbo].[NewStagingTable].[Sale Amount]', 'SaleAmount', 'COLUMN';
+EXEC sp_rename '[dbo].[NewStagingTable].[Sales Ratio]', 'SalesRatio', 'COLUMN';
+EXEC sp_rename '[dbo].[NewStagingTable].[Property Type]', 'PropertyType', 'COLUMN';
+EXEC sp_rename '[dbo].[NewStagingTable].[Residential Type]', 'ResidentialType', 'COLUMN';
+EXEC sp_rename '[dbo].[NewStagingTable].[Non Use Code]', 'NonUseCode', 'COLUMN';
+EXEC sp_rename '[dbo].[NewStagingTable].[Assessor Remarks]', 'AssessorRemarks', 'COLUMN';
+EXEC sp_rename '[dbo].[NewStagingTable].[OPM remarks]', 'OPMRemarks', 'COLUMN';
+EXEC sp_rename '[dbo].[NewStagingTable].[Location]', 'Location', 'COLUMN';
